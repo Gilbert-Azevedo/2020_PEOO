@@ -10,6 +10,10 @@ namespace Exercicio01
     {
         static void Main(string[] args)
         {
+            ConsoleKeyInfo x = Console.ReadKey();
+            if (x.KeyChar == 's') Console.WriteLine("Você digitou s");
+            if (x.KeyChar == 'n') Console.WriteLine("Você digitou n");
+            Console.ReadKey();
         }
     }
 }
