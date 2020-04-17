@@ -10,9 +10,20 @@ namespace Exercicio01
     {
         static void Main(string[] args)
         {
-            ConsoleKeyInfo x = Console.ReadKey();
-            if (x.KeyChar == 's') Console.WriteLine("Você digitou s");
-            if (x.KeyChar == 'n') Console.WriteLine("Você digitou n");
+            // Mais sobre if-else em: https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/if-else
+
+            Console.WriteLine("Digite dois valores inteiros");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            // Solução usando apenas if
+            if (a == b) Console.WriteLine("Números iguais");
+            if (a > b) Console.WriteLine($"Maior = {a}");
+            if (a < b) Console.WriteLine($"Maior = {b}");
+            // Solução usando if-else
+            if (a == b) Console.WriteLine("Números iguais");
+            else
+              if (a > b) Console.WriteLine($"Maior = {a}");
+            else Console.WriteLine($"Maior = {b}");
             Console.ReadKey();
         }
     }
