@@ -10,19 +10,24 @@ namespace Exercicio14
     {
         static void Main(string[] args)
         {
+            // Nesse exemplo é necessário testar os valores entre 1 e 1000
+            // A solução não testa os centavos, mas a solução para os centavos
+            // é análoga, bastando considerar os valores entre 1 e 99
             Console.WriteLine("Informe um valor inteiro até 1000");
             int i = int.Parse(Console.ReadLine());
+            // Os valores 100 e 1000 precisam ser testados individualmente
             if (i == 100 || i == 1000)
             {
                 if (i == 100) Console.WriteLine("Cem");
                 if (i == 1000) Console.WriteLine("Mil");
             }
-            else // i != 100 && i != 1000
+            else // Quando não for cem nem mil
             {
-                int c = i / 100; // Número de centenas
-                i = i % 100;
-                int d = i / 10;  // Número de dezenas
-                int u = i % 10;  // Número de unidades
+                int c = i / 100; // Calcula o número de centenas
+                i = i % 100;     // Resto da divisão por cem, ou seja, entre 0 e 99
+                int d = i / 10;  // Calcula o número de dezenas
+                int u = i % 10;  // Calcula o número de unidades
+                // Testa o número de centenas
                 switch (c)
                 {
                     case 1: Console.Write("Cento"); break;
@@ -35,6 +40,7 @@ namespace Exercicio14
                     case 8: Console.Write("Oitocentos"); break;
                     case 9: Console.Write("Novecentos"); break;
                 }
+                // Quando o resto for maior que 19, dá para testar as dezenas e unidades
                 if (i > 19)
                 {
                     if (c != 0 && (d != 0 || u != 0)) Console.Write(" e ");
@@ -64,6 +70,7 @@ namespace Exercicio14
                 }
                 else
                 {
+                    // De 1 a 19, tem que testar individualmente
                     if (c != 0 && (d != 0 || u != 0)) Console.Write(" e ");
                     switch (i)
                     {
